@@ -40,6 +40,9 @@ namespace SalesWebMVC
                    // options.UseSqlServer(Configuration.GetConnectionString("SalesWebMVCContext")));
                    options.UseSqlServer(Configuration.GetConnectionString("SalesWebMVCContext"), builder =>
                         builder.MigrationsAssembly("SalesWebMVC")));
+
+            //injetando o serviço na injeçao de independencia da aplicação.
+            services.AddScoped<SeedingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
